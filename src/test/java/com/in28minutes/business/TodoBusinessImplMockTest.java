@@ -14,6 +14,20 @@ import com.in28minutes.data.api.TodoService;
 
 
 public class TodoBusinessImplMockTest {
+    // What is mocking?
+    // Mocking is a way to create fake objects that simulate the behavior of a real objects.
+    // They can be programmed to return different values based on the input parameters.
+    // Unlike stubs, which provide fixed responses to method calls, mocks can be dynamically created from code at runtime.
+    // They allow to test the behavior of a class without relying on its dependencies.
+    //Mocks offer more functionality than stubs. They can be used to verify interactions between objects,
+    // such as method calls and argument values
+
+    // In this example, we are using Mockito to create a mock of the TodoService interface.
+    // The mock object will return a predefined list of todos when the retrieveTodos method is called.
+    // This allows us to test the TodoBusinessImpl class in isolation,
+    // without relying on the actual implementation of the TodoService interface.
+    // The TodoService interface is a dependency of the TodoBusinessImpl class.
+    // We are using dependency injection to pass the mock object to the TodoBusinessImpl class.
 
     @Test
     public void usingMockito() {
