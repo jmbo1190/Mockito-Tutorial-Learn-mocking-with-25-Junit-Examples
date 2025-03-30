@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.util.Arrays;
 import java.util.Collection;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,6 +14,18 @@ import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
 public class StringHelperParameterizedTest {
+
+	@Before
+	public void setup() {
+		// This method is called before each test
+		System.out.println("\nBefore Test");
+	}
+
+	@After
+	public void teardown() {
+		// This method is called after each test
+		System.out.println("After Test");
+	}
 
 	// AACD => CD ACD => CD CDEF=>CDEF CDAA => CDAA
 
@@ -36,6 +49,12 @@ public class StringHelperParameterizedTest {
 
 	@Test
 	public void testTruncateAInFirst2Positions() {
+		System.out.println("  Input: " + input);
+		System.out.println("  Expected Output: " + expectedOutput);
+		System.out.println("  Actual Output: " + helper.truncateAInFirst2Positions(input));
+		System.out.println("Test");
+		System.out.println("====================================");
+		// This method is called for each test
 		assertEquals(expectedOutput, 
 				helper.truncateAInFirst2Positions(input));
 	}
